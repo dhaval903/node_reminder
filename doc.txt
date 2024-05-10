@@ -1,0 +1,21 @@
+api 
+
+- customer post 
+    name *
+    mobile *
+    email 
+    address 
+    account no
+    type - service or recurring
+    
+    service time - 1 month , 3 month ,4 month , 6 month ,12 month 
+    recurring amount - 
+
+    reg. date - 
+
+    service master - 
+        name *
+        price *
+        duration *
+
+    type master - name * 
