@@ -1,0 +1,19 @@
+- node , react , mongo
+- node apis
+    - type master
+    - service master 
+    - customer api
+    - login 
+    - regisstration
+    - update profile 
+    - change password
+    - company details 
+    - if recurring 
+        - account jama entry 
+    - if service 
+        - service entry 
+    - reports 
+        - all customer 
+        - due reccurring 
+        - due service 
+    - reminder lists
