@@ -24,3 +24,5 @@ async function ConnectDatabase(){
         throw error
     }
 }
+
+module.exports = {ConnectDatabase}
