@@ -5,8 +5,8 @@ const { ConnectDatabase } = require('../config/db.js');
 async function getAllType() {
     try {
         const db = await ConnectDatabase();
-        const collection = db.collection("type_master")
-        const documents = await collection.find().toArray();
+        const collection = db.collection("tbl_type_master")
+        const documents = await collection.find({is_del:0}).toArray();
         return documents;
     } catch (err) {
         console.log(err);
@@ -14,7 +14,36 @@ async function getAllType() {
     }
 }
 
+async function getAllServices()
+{
+    try{
+        const db = await ConnectDatabase();
+        const collection = db.collection("tbl_service_master")
+        const documents = await collection.find({is_del:0}).toArray()
+        return documents;
+    }
+    catch(err)
+    {
+        throw err;
+    }
+}
+
+async function getAllProduct(req)
+{
+    // console.log(req)
+    const created_type = req.created_type
+    try{
+        const db = await ConnectDatabase();
+        const collection = db.collection("tbl_product_master");
+        const documents = await collection.find({is_del:0,created_type:created_type}).toArray()
+        return documents;
+    }
+    catch(err)
+    {
+        throw err
+    }
+}
 // Export the getAllType function
-module.exports = { getAllType };
+module.exports = { getAllType,getAllServices,getAllProduct };
 
 // Now you can use getAllType elsewhere in your code after its definition

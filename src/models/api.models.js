@@ -14,4 +14,25 @@ ApiModels.getTypeList = async (reqBody, result) => {
     }
 }
 
+ApiModels.getServicesList = async(reqBody,result) =>{
+    try {
+        const data = await fs.getAllServices();
+        result(null,data)
+    }
+    catch(error)
+    {
+        result(error)
+    }
+}
+
+ApiModels.getProductList = async(req,result)=>{
+    try{
+        const data = await fs.getAllProduct(req)
+        result(null,data)
+    }
+    catch(err){
+        result(err)
+    }
+}
+
 module.exports = ApiModels

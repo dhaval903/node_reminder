@@ -12,10 +12,41 @@ api
     recurring amount - 
 
     reg. date - 
-
+---------------------------
     service master - 
         name *
         price *
-        duration *
-
-    type master - name * 
+        duration *  // always in months
+       - is_del (0:no , 1 :del)
+------------------------------
+    type master - 
+        - type_name * 
+        - is_del (0:no , 1 :del)
+----------------------------
+    product master 
+        - name 
+        - price 
+        - image
+        - description
+        - service (from service master)
+        - created_type (0:admin,1:user)
+        - created_by (tbl_user)
+        - created_at
+        - updated_at
+        - is_del (0:no , 1 :del)
+----------------------------------
+    User Master 
+        - Full name
+        - company name
+        - address 
+        - email
+        - password
+        - mobile
+        - mobile2
+        - is_del (0:no,1 : del)
+        - login_status(1:allow, 2 : block,3:expired)
+        - created_at
+        - updated_at
+        - type
+        - service_type
+        - expiry_time

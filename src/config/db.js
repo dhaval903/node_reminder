@@ -1,8 +1,11 @@
 const { MongoClient } = require('mongodb')
+
+const dotenv = require('dotenv')
+dotenv.config({ path: './dev.env' })
 //connect mongo db
 
-const uri = "mongodb://localhost:27017"
-const dbName = "db_reminder"
+const uri = process.env.CONNECTION_STRING
+const dbName = process.env.dbName
 
 // MongoClient.connect(uri)
 //   .then(client => {

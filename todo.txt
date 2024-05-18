@@ -1,0 +1,15 @@
+Node side work 
+
+type master - done 
+service master - done 
+product master - done 
+user master - WIP 
+validation - pending 
+register user - pending 
+login user , token - pending 
+
+
+React js work 
+
+responsive design
+Register and login page design - pending 
