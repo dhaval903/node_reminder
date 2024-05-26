@@ -43,7 +43,21 @@ async function getAllProduct(req)
         throw err
     }
 }
+
+async function getAllUsers(req)
+{
+    try{
+        const db = await ConnectDatabase();
+        const collection = db.collection("tbl_user_master");
+        const documents = await collection.find().toArray();
+        return documents;
+    }
+    catch(err)
+    {
+        throw err;
+    }
+}
 // Export the getAllType function
-module.exports = { getAllType,getAllServices,getAllProduct };
+module.exports = { getAllType,getAllServices,getAllProduct,getAllUsers };
 
 // Now you can use getAllType elsewhere in your code after its definition

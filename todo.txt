@@ -3,8 +3,8 @@ Node side work
 type master - done 
 service master - done 
 product master - done 
-user master - WIP 
-validation - pending 
+user master - done 
+validation - WIP 
 register user - pending 
 login user , token - pending 
 

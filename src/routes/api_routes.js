@@ -8,6 +8,8 @@ router.get('/service_list',controller.getServices)
 
 router.post('/get_product_list',controller.getProducts)
 
+router.post('/get_users_list',controller.getUsersList)
+
 router.get('/customer',(req,res)=>{
     console.log("customer api called")
     res.send("customer api called")

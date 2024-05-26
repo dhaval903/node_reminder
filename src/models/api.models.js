@@ -35,4 +35,15 @@ ApiModels.getProductList = async(req,result)=>{
     }
 }
 
+ApiModels.getUsers = async(req,result)=>{
+    try{
+        const data = await fs.getAllUsers(req)
+        result(null,data)
+    }
+    catch(err)
+    {
+        result(err)
+    }
+}
+
 module.exports = ApiModels

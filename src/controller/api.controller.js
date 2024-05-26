@@ -63,3 +63,27 @@ exports.getProducts = async(req,res)=>{
         }
     })
 }
+
+exports.getUsersList = async(req,res)=>{
+    ApiModels.getUsers(req.body,(err,result)=>{
+        if(err)
+        {
+            const result_data  ={
+                data:"",
+                status:500,
+                message:err.message || "Some error occurred while retrieving data."
+            }
+
+            res.send(result_data)
+        }
+        else{
+            const result_data = {
+                data:result,
+                status:200,
+                message:"Data Retrieved successfully"
+            }
+
+            res.send(result_data)
+        }
+    })
+}
