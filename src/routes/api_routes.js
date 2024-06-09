@@ -16,4 +16,6 @@ router.get('/customer',(req,res)=>{
     res.send("customer api called")
 });
 
+router.post('/resgister_user',controller.registerUser)
+
 module.exports = router;

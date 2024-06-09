@@ -5,9 +5,9 @@ service master - done
 product master - done 
 user master - done 
 validation - done (only product validator is set)
-set mongodb online - WIP
-register user - pending
-login user , token - pending
+set mongodb online - Done
+register user - Done
+login user , token - WIP
 
 React js work 
 

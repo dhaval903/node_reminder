@@ -72,7 +72,7 @@ exports.getProducts = async (req, res) => {
             }
 
             res.send(result_data)
-            
+
         }
     })
 }
@@ -97,5 +97,34 @@ exports.getUsersList = async (req, res) => {
 
             res.send(result_data)
         }
+    })
+}
+
+exports.registerUser = async (req, res) => {
+
+    ApiModels.RegisterUser(req.body, (err, result) => {
+        // console.log(req.body)
+
+        if (err) {
+            var result_data = {
+                data: "",
+                status: 500,
+                message: err.message || "Some error occurred while retrieving data."
+            }
+
+            res.send(result_data)
+        }
+        else
+        {
+            var result_data = {
+                data: result,
+                status: 200,
+                message: "Data Inserted successfully"
+            }
+
+            res.send(result_data)
+        }
+
+        
     })
 }
