@@ -4,12 +4,17 @@ type master - done
 service master - done 
 product master - done 
 user master - done 
-validation - WIP 
-register user - pending 
-login user , token - pending 
-
+validation - done (only product validator is set)
+set mongodb online - WIP
+register user - pending
+login user , token - pending
 
 React js work 
 
 responsive design
 Register and login page design - pending 
+
+Mongo cluster password 
+
+- dhaval_reminder
+-  SotecpwH5W7VHTF1

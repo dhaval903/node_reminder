@@ -1,86 +1,98 @@
 const ApiModels = require("../models/api.models.js")
 
 exports.getType = async (req, res) => {
-    ApiModels.getTypeList(req.body,(err, result) => {
+    ApiModels.getTypeList(req.body, (err, result) => {
         if (err) {
             const result_data = {
-                data:"",
-                status:500,
-                message:err.message || "Some error occurred while retrieving data."
+                data: "",
+                status: 500,
+                message: err.message || "Some error occurred while retrieving data."
             }
             res.status(500).send(result_data)
         }
-        else{
+        else {
             const result_data = {
                 data: result,
-                status:200,
-                message:"Data Retrieved successfully"
+                status: 200,
+                message: "Data Retrieved successfully"
             }
             res.send(result_data)
         }
     })
 }
 
-exports.getServices = async (req,res)=>{
-    ApiModels.getServicesList(req.body,(err,result)=>{
+exports.getServices = async (req, res) => {
+    ApiModels.getServicesList(req.body, (err, result) => {
         if (err) {
             const result_data = {
-                data:"",
-                status:500,
-                message:err.message || "Some error occurred while retrieving data."
+                data: "",
+                status: 500,
+                message: err.message || "Some error occurred while retrieving data."
             }
             res.status(500).send(result_data)
         }
-        else{
+        else {
             const result_data = {
                 data: result,
-                status:200,
-                message:"Data Retrieved successfully"
+                status: 200,
+                message: "Data Retrieved successfully"
             }
             res.send(result_data)
         }
     })
 }
 
-exports.getProducts = async(req,res)=>{
+exports.getProducts = async (req, res) => {
 
-    ApiModels.getProductList(req.body,(err,result)=>{
+    ApiModels.getProductList(req.body, (err, result) => {
         if (err) {
-            const result_data = {
-                data:"",
-                status:500,
-                message:err.message || "Some error occurred while retrieving data."
+            var result_data = {
+                data: "",
+                status: 500,
+                message: err.message || "Some error occurred while retrieving data."
             }
             res.status(500).send(result_data)
         }
-        else{
-            const result_data = {
-                data: result,
-                status:200,
-                message:"Data Retrieved successfully"
+        else {
+            // console.log(result.length)
+            // console.log(result)
+            if (result.length > 0) {
+                var result_data = {
+                    data: result,
+                    status: 200,
+                    message: "Data Retrieved successfully"
+                }
             }
+            else {
+                var result_data = {
+                    data: [],
+                    status: 201,
+                    message: "No Data Found"
+                }
+            }
+
             res.send(result_data)
+            
         }
     })
 }
 
-exports.getUsersList = async(req,res)=>{
-    ApiModels.getUsers(req.body,(err,result)=>{
-        if(err)
-        {
-            const result_data  ={
-                data:"",
-                status:500,
-                message:err.message || "Some error occurred while retrieving data."
+exports.getUsersList = async (req, res) => {
+    ApiModels.getUsers(req.body, (err, result) => {
+        if (err) {
+            const result_data = {
+                data: "",
+                status: 500,
+                message: err.message || "Some error occurred while retrieving data."
             }
 
             res.send(result_data)
         }
-        else{
+        else {
             const result_data = {
-                data:result,
-                status:200,
-                message:"Data Retrieved successfully"
+                data: result,
+                status: 200,
+                message: "Data Retrieved successfully"
             }
 
             res.send(result_data)

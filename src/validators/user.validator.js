@@ -1,6 +1,6 @@
 const {check,validationResult} = require('express-validator')
 
-exports.validateProduct  = [
+exports.validateUser  = [
     check('created_type')
     .notEmpty().withMessage('Created Type is Required')
     .isLength({max:1}),

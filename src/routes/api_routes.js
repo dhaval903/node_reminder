@@ -1,12 +1,13 @@
 const express = require('express')
 const router = express.Router()
 const controller = require('../controller/api.controller.js')
+const productValidator = require('../validators/product.validator.js')
 
 router.get('/type', controller.getType)
 
 router.get('/service_list',controller.getServices)
 
-router.post('/get_product_list',controller.getProducts)
+router.post('/get_product_list',productValidator.validateProduct,controller.getProducts)
 
 router.post('/get_users_list',controller.getUsersList)
 
