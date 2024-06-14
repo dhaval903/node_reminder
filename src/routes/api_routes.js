@@ -1,5 +1,7 @@
 const express = require('express')
 const router = express.Router()
+const jwt = require('jsonwebtoken')
+const md5 = require('md5')
 const controller = require('../controller/api.controller.js')
 const productValidator = require('../validators/product.validator.js')
 
@@ -15,6 +17,8 @@ router.get('/customer',(req,res)=>{
     console.log("customer api called")
     res.send("customer api called")
 });
+
+router.post('/login',controller.login)
 
 router.post('/resgister_user',controller.registerUser)
 
