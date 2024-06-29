@@ -114,8 +114,7 @@ exports.registerUser = async (req, res) => {
 
             res.send(result_data)
         }
-        else
-        {
+        else {
             var result_data = {
                 data: result,
                 status: 200,
@@ -125,6 +124,47 @@ exports.registerUser = async (req, res) => {
             res.send(result_data)
         }
 
-        
+
     })
+}
+
+exports.login = async (req, res) => {
+
+    const mobile = req.body.mobile;
+    const password = req.body.password;
+
+
+    ApiModels.login(req, (err, result) => {
+
+        console.log(err)
+        console.log(result)
+        if (err) {
+            var result_data = {
+                data: "",
+                status: 500,
+                message: err.message || "Some error occurred while retrieving data."
+            }
+
+            res.send(result_data)
+        }
+        else {
+            if (err == 0) {
+
+                var result_data = {
+                    data: "",
+                    status: 400,
+                    message: result
+                }
+
+                res.send(result_data)
+            }
+            else {
+
+                res.status(result.status).send(result);
+
+            }
+        }
+    })
+    // console.log(req.body)
+
 }
