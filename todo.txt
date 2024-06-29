@@ -7,11 +7,13 @@ user master - done
 validation - done (only product validator is set)
 set mongodb online - Done
 register user - Done
-login user , token - WIP
+login user , token - DONE
 
 React js work 
 
-responsive design
+git repo - WIP
+desing on paper -
+responsive design - 
 Register and login page design - pending 
 
 Mongo cluster password 
