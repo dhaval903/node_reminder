@@ -136,8 +136,9 @@ exports.login = async (req, res) => {
 
     ApiModels.login(req, (err, result) => {
 
-        console.log(err)
-        console.log(result)
+        console.log(req.body);
+        // console.log(err)
+        // console.log(result)
         if (err) {
             var result_data = {
                 data: "",
